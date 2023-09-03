@@ -15,7 +15,6 @@ if (mongoose.connection.readyState === 0) {
       console.log(err);
     });
 }
-
 const server = new ApolloServer({
   resolvers,
   typeDefs,

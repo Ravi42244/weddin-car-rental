@@ -2,7 +2,7 @@ import gql from "graphql-tag";
 
 module.exports = gql `
 type User {
-_id: ID!
+_id: ID
 name: String
 email: String
 mobile: String
@@ -45,12 +45,25 @@ input loginInput {
     
 
 }
+enum ErrorType {
+  BAD_REQUEST_ERROR
+  FORBIDDEN_ERROR
+  INTERNAL_SERVER_ERROR
+  NOT_FOUND_ERROR
+  UNAUTHORIZED_ERROR
+}
 
+type Error {
+
+  errorMessage: String
+
+}
+union loginResult = User | Error
 
 type Mutation {
 
     userRegistration(userRegisterInput: registerInput!): User!
-    userlogin(userLoginInput: loginInput!): User
+    userlogin(userLoginInput: loginInput!): loginResult
 
 
 }
