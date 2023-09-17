@@ -46,6 +46,7 @@ module.exports = {
       let user = await User.findOne({ email: mobileOremail });
       if (user === null) {
         user = await User.findOne({ mobile: mobileOremail });
+        console.log(user)
       }
       if (user === null) {
         return {
