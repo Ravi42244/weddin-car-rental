@@ -26,6 +26,10 @@ import { useForm } from "react-hook-form";
 function SignIn() {
   const form = useForm({
     resolver: zodResolver(signInFormValidationSchema),
+    defaultValues: {
+      mobileOremail: "",
+      password: ""
+    },
   });
   const onSubmit = (data) => {
     console.log(data);
@@ -64,11 +68,12 @@ function SignIn() {
                                   {...field}
                                   placeholder="Enter Mobile or Email ID"
                                   className="border-none bg-slate-50 rounded focus:bg-white focus-visible:ring-transparent"
-                                />
+                                ></Input>
+                                <FormMessage />
                               </div>
                             </FormControl>
-
-                            <FormMessage />
+                            
+                            
                           </FormItem>
                         )}
                       />
@@ -79,7 +84,7 @@ function SignIn() {
                         render={({ field }) => (
                           <FormItem>
                             <FormControl>
-                              <div className="flex flex-col pb-10">
+                              <div className=" flex flex-col pb-10">
                                 <Label htmlFor="name">Password</Label>
                                 <Input
                                   name="password"
@@ -88,7 +93,7 @@ function SignIn() {
                                   placeholder="Enter Password"
                                   className="border-none bg-slate-50 rounded focus-visible:ring-transparent focus:bg-white"
                                 />
-
+<FormMessage />
                                 <div className="flex justify-between items-center mt-5">
                                   <Button
                                     type="submit"
@@ -108,18 +113,20 @@ function SignIn() {
                               </div>
                             </FormControl>
 
-                            <FormMessage />
+                            
                           </FormItem>
                         )}
                       />
                     </div>
                   </div>
+               
                 </form>
               </Form>
             </CardContent>
           </CardHeader>
           <div>
             <div className="-mt-9 mx-52 flex justify-center rounded-full bg-white">
+           
               or
             </div>
           </div>
