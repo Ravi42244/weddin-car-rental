@@ -1,7 +1,8 @@
-import { startServerAndCreateNextHandler } from "@as-integrations/next";
+import { startServerAndCreateNextHandler } from "@as-integrations/next"
+
 import { ApolloServer } from "@apollo/server";
-import resolvers from "../../Graphql Utils/resolvers";
-import typeDefs from "../../Graphql Utils/typeDefs.js";
+import resolvers from "../../../Graphql Utils/resolvers";
+import typeDefs from "../../../Graphql Utils/typeDefs.js";
 import { connectMongoDB } from "../../../../Utils/mongoDB/mongoDB_Connection";
 import mongoose from "mongoose";
 
@@ -18,6 +19,8 @@ if (mongoose.connection.readyState === 0) {
 const server = new ApolloServer({
   resolvers,
   typeDefs,
+  context
+  
 });
 
 const handler = startServerAndCreateNextHandler(server);

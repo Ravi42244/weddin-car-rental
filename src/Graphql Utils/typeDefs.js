@@ -1,6 +1,6 @@
 import gql from "graphql-tag";
 
-module.exports = gql `
+module.exports = gql`
 type User {
 _id: ID
 name: String

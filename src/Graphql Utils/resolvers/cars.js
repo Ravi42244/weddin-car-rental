@@ -1,5 +1,5 @@
-import Car from "../../../../Utils/Model/Car";
-import { nullObjectRemover } from "../../../../Utils/nullObjectRemover";
+import Car from "../../../Utils/Model/Car";
+import { nullObjectRemover } from "../../../Utils/nullObjectRemover";
 
 module.exports = {
   Query: {
