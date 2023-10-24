@@ -1,4 +1,4 @@
-import '../../../(Landing Page)/globals.css'
+import '@/app/(Landing Page)/globals.css'
 export const metadata = {
     title: 'Sign-In | Wedding Car Rentals',
     description: 'Sign In Page',
@@ -6,8 +6,8 @@ export const metadata = {
    
   export default function RootLayout({ children }) {
    return (
-      <html lang="en">
-        <body className='font-ubuntu' suppressHydrationWarning={true}>{children}</body>
+      <html lang="en" suppressHydrationWarning={true}>
+        <body className='font-ubuntu' >{children}</body>
       </html>
     )
   }

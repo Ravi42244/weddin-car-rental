@@ -1,7 +1,7 @@
 'use client';
 
 import Sidebar from '@/components/Sidebar'
-import './globals.css'
+import '@/app/(Landing Page)/globals.css'
 import { SessionProvider } from 'next-auth/react'
 
 export const metadata = {
@@ -17,7 +17,7 @@ export default function RootLayout({
     
     <html lang="en"  suppressHydrationWarning={true}>
        
-      <body>
+      <body >
         <SessionProvider>
 
           {children}

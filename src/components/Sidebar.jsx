@@ -41,29 +41,27 @@ const accountRoutes = [
 
 ]
 
-const display= ()=>{
-  console.log("tets function")
-}
+
 
 function Sidebar() {
   const pathName = usePathname()
 
 
   return (
-    <div className='space-y-4 py-4 flex flex-col h-screen bg-[#111827] text-white'>
+    <div className='space-y-4 py-4 flex flex-col h-screen bg-yellow-400 text-white'>
 
       <div className='px-3 py-2 flex-1'>
         <Link href='/dashboard' className='flex items-center pl-3 mb-14 '>
           <div className='relative w-8 h-8 mr-4'>
             <Image sizes='fill' fill alt="logo" src="/logo.png" />
           </div>
-          <h1 className='text-xl font-'>Wedding rental cars</h1>
+          <h1 className='text-xl text-black font-bold'>Wedding rental cars</h1>
         </Link>
         <div className='space-y-1'>
           {routes.map((route) => (
             <Link
               href={route.href} key={route.href}
-              className={cn('text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-white hover:bg-white/10 rounded-lg transition', pathName === route.href ? 'bg-white/10 text-white' : 'text-zinc-400')}>
+              className={cn('text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-white hover:bg-yellow-500 rounded-lg transition', pathName === route.href ? 'bg-yellow-500 text-white' : 'text-yellow-700')}>
               <div className='flex items-center flex-1'>
                 <route.icon className={cn("h-5 w-5 mr-3", route.color)} />
                 {route.label}
@@ -82,7 +80,7 @@ function Sidebar() {
           {accountRoutes.map((accountRoute) => (
             <Link
               href={accountRoute.href} key={accountRoute.href}
-              className={cn('text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-white hover:bg-white/10 rounded-lg transition', pathName === accountRoute.href ? "text-white bg-white/10" : "text-zinc-400")}>
+              className={cn('text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-white hover:bg-yellow-500 rounded-lg transition', pathName === accountRoute.href ? "text-white bg-yellow-500" : "text-yellow-700")}>
               <div className='flex items-center flex-1'>
                 <accountRoute.icon className={cn("h-5 w-5 mr-3", accountRoute.color)} />
                 {accountRoute.label}
@@ -102,7 +100,9 @@ function Sidebar() {
              
             }}>
               <LogOutIcon className={cn("h-5 w-5 mr-3", "text-red-700 group-hover:text-white")} />
-              Logout
+            <span className='text-yellow-700 group-hover:text-white'>
+                Logout
+              </span>
             </div>
           </div>
 
