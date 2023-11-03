@@ -43,7 +43,7 @@ const avatar_dropdown_option=[
 
     return (
         <>
-        <div className='flex items-center w-full p-4 '>
+        <div className='flex items-center  w-full p-4 '>
         <MobileSideBar/>
                 <div className='flex w-full  justify-end'>
 

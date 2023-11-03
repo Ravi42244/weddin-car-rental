@@ -1,5 +1,7 @@
-/** @type {import('tailwindcss').Config} */
 import {fontFamily} from 'tailwindcss/defaultTheme'
+
+/** @type {import('tailwindcss').Config} */
+
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -31,6 +33,9 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      fontFamily:{
+        ubuntu: ['var(--font-ubuntu)',...fontFamily.sans]
+      }
     }
   },
   plugins: [require("tailwindcss-animate"),require('tailwind-scrollbar')({ nocompatible: true })]
